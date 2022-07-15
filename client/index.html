@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+  <body style="background-color: rgb(144, 177, 240)">
+    <div
+      style="
+        display: inline-block;
+        border-color: rgb(219, 130, 200);
+        border-style: groove;
+        border-width: 10px;
+        background-color: rgb(211, 28, 171);
+        width: 100%;
+        height: 100px;
+      "
+    >
+      <div
+        style="
+          font-size: 65pt;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          text-align: center;
+          color: rgb(250, 197, 65);
+          position: relative;
+          bottom: 13%;
+        "
+      >
+        FRIEND DESTROYER
+      </div>
+    </div>
+    <!--Begin insert-->
+    <div
+      style="
+        position: relative;
+        display: inline-block;
+        margin-left: 22%;
+        margin-top: 3%;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          display: flex;
+          width: 100%;
+          align-items: center;
+          padding: 20px;
+        "
+      >
+        <!--player health-->
+        <div
+          style="
+            position: relative;
+            height: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+          "
+        >
+          <div
+            style="
+              background-color: rgb(211, 28, 171);
+              height: 30px;
+              width: 100%;
+            "
+          ></div>
+          <div
+            id="playerHealth"
+            style="
+              border-style: groove;
+              border-width: 8px;
+              position: absolute;
+              background: rgb(250, 197, 65);
+              top: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+            "
+          ></div>
+        </div>
+        <!--timer-->
+        <div
+          id="timer"
+          style="
+            font-size: 20pt;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+              sans-serif;
+            border-style: groove;
+            border-width: 8px;
+            background-color: rgb(144, 177, 240);
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          10
+        </div>
+        <!--enemy health-->
+        <div style="position: relative; height: 30px; width: 100%">
+          <div style="background-color: rgb(211, 28, 171); height: 30px"></div>
+          <div
+            id="enemyHealth"
+            style="
+              border-style: groove;
+              border-width: 8px;
+              position: absolute;
+              background: rgb(250, 197, 65);
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+            "
+          ></div>
+        </div>
+        <div></div>
+      </div>
+      <div
+        id="displayText"
+        style="
+          font-size: 40pt;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          position: absolute;
+          color: white;
+          align-items: center;
+          justify-content: center;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          display: none;
+        "
+      >
+        MUTUAL DESTRUCTION
+      </div>
+      <canvas
+        style="
+          border-style: groove;
+          border-width: 20px;
+          border-color: rgb(130, 154, 197);
+        "
+      ></canvas>
+    </div>
+    <br /><br /><br />
+
+    <script src="index.js"></script>
+    <!--End insert-->
+    <button
+      id="hintButton"
+      style="
+        position: absolute;
+        right: 8%;
+        top: 30%;
+        background-color: rgb(250, 197, 65);
+        height: 70px;
+        width: 180px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 18pt;
+      "
+    >
+      Get a free hint!</button
+    ><br />
+    <input
+      id="nameInput"
+      type="text"
+      style="
+        margin: 10px;
+        position: absolute;
+        right: 7.5%;
+        top: 73%;
+        height: 30px;
+        width: 180px;
+        text-align: center;
+      "
+      placeholder="Enter Winner Name!"
+    />
+    <div>
+      <button
+        id="getAll"
+        onclick="getAllNames()"
+        style="
+          position: absolute;
+          right: 8%;
+          top: 40%;
+          height: 70px;
+          width: 180px;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          font-size: 18pt;
+          background-color: rgb(250, 197, 65);
+        "
+      >
+        See all winners!
+      </button>
+      <button
+        id="post"
+        style="
+          position: absolute;
+          right: 8%;
+          top: 65%;
+          height: 70px;
+          width: 180px;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          font-size: 18pt;
+          background-color: rgb(250, 197, 65);
+        "
+        onclick="postName();"
+      >
+        Add winner to the list!</button
+      ><br />
+      <button
+        id="delete"
+        onclick="deleteAllNames();"
+        style="
+          position: absolute;
+          right: 8%;
+          top: 50%;
+          height: 70px;
+          width: 180px;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          font-size: 18pt;
+          background-color: rgb(250, 197, 65);
+        "
+      >
+        Clear winner list
+      </button>
+    </div>
+    <br />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
